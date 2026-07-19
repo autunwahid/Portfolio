@@ -6,8 +6,6 @@
     <title>Wahid's Portfolio | Product Manager</title>
     <!-- Tailwind CSS for utility-first responsive layout styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for high-quality professional iconography -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts Inter for a modern, sleek technical aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -83,7 +81,7 @@
             border: 4px solid #3b82f6;
             top: 24px;
             border-radius: 50%;
-            z-index: 1;
+            z-index: 10;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
         }
@@ -227,7 +225,7 @@
                     <a href="#contact" class="text-secondary hover:text-accent px-3 py-2 rounded-md text-sm font-semibold transition-colors">Contact</a>
                 </div>
                 <div class="md:hidden">
-                    <a href="#contact" class="bg-primary text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-slate-800 transition-colors">Let's Talk</a>
+                    <button onclick="openModal('modal-cv-center')" class="bg-primary text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-slate-800 transition-colors">Let's Talk</button>
                 </div>
             </div>
         </div>
@@ -250,14 +248,18 @@
             </p>
             <div class="flex flex-wrap gap-4 pt-2">
                 <div class="bg-white px-5 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
-                    <div class="bg-blue-50 p-3 rounded-xl text-accent"><i class="fas fa-users-cog fa-lg"></i></div>
+                    <div class="bg-blue-50 p-3 rounded-xl text-accent">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
                     <div>
                         <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Scaled Product To</p>
                         <p class="font-extrabold text-2xl text-slate-900">7M+ Users</p>
                     </div>
                 </div>
                 <div class="bg-white px-5 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
-                    <div class="bg-emerald-50 p-3 rounded-xl text-highlight"><i class="fas fa-chart-line fa-lg"></i></div>
+                    <div class="bg-emerald-50 p-3 rounded-xl text-highlight">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
                     <div>
                         <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">YoY Expansion</p>
                         <p class="font-extrabold text-2xl text-slate-900">117%+ Growth</p>
@@ -267,28 +269,78 @@
             <div class="pt-6 flex flex-wrap gap-4">
                 <a href="#journey" class="bg-primary text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                     <span>View My Journey</span>
-                    <i class="fas fa-arrow-right text-xs"></i>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
                 <a href="#contact" class="bg-white text-primary border-2 border-slate-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-50 transition-colors shadow-sm">
                     Get in Touch
                 </a>
-                <a href="Md Wahid Alam Chowdhury_Product Manager_Resume.pdf" target="_blank" class="bg-blue-50 text-blue-700 hover:bg-blue-100 px-5 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2">
-                    <i class="fas fa-file-pdf"></i>
+                <!-- Launches Interactive Resume Download Center -->
+                <button onclick="openModal('modal-cv-center')" class="bg-blue-50 text-blue-700 hover:bg-blue-100 px-5 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     <span>Download CV</span>
-                </a>
+                </button>
             </div>
         </div>
         
         <div class="lg:w-1/2 flex justify-center">
             <div class="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[450px]">
-                <div class="absolute inset-0 bg-gradient-to-tr from-accent to-highlight rounded-[32px] opacity-15 blur-3xl"></div>
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent to-highlight rounded-[32px] opacity-15 blur-3xl animate-pulse"></div>
                 
-                <div class="relative w-full h-full bg-white rounded-[28px] shadow-2xl border-4 border-white overflow-hidden group">
-                    <!-- High Resolution Professional portrait from system assets -->
+                <div class="relative w-full h-full bg-slate-900 rounded-[28px] shadow-2xl border-4 border-white overflow-hidden group">
+                    
+                    <!-- LAYER 1: Vector SVG Portrait Fallback (Renders instantly and acts as beautiful placeholder if local file is missing) -->
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-slate-800 via-slate-900 to-indigo-950 flex flex-col items-center justify-center p-6 text-center">
+                        <svg class="w-full h-full max-h-[360px]" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background glow ring -->
+                            <circle cx="100" cy="110" r="75" fill="none" stroke="url(#blueGrad)" stroke-width="3" stroke-dasharray="6 4" class="animate-spin" style="animation-duration: 25s; transform-origin: 100px 110px;"></circle>
+                            <!-- Face/Neck -->
+                            <rect x="91" y="115" width="18" height="25" rx="3" fill="#fbc3a6" />
+                            <path d="M75 100C75 75 125 75 125 100C125 120 75 120 75 100Z" fill="#fdd4be"/>
+                            <!-- Shirt (Soft Pink) -->
+                            <path d="M78 135 L122 135 L128 155 L72 155 Z" fill="#ffe4e6"/>
+                            <path d="M90 135 L100 148 L110 135 Z" fill="#fda4af"/>
+                            <!-- Red Tie with Pattern -->
+                            <path d="M96 138 L104 138 L108 175 L100 183 L92 175 Z" fill="#b91c1c"/>
+                            <path d="M98 145 L102 145 L104 170 L96 170 Z" fill="#991b1b" />
+                            <!-- Glasses Frame & Detail (Signature Glasses) -->
+                            <rect x="79" y="93" width="18" height="12" rx="3" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+                            <rect x="103" y="93" width="18" height="12" rx="3" fill="none" stroke="#1e293b" stroke-width="2.5"/>
+                            <line x1="97" y1="99" x2="103" y2="99" stroke="#1e293b" stroke-width="3"/>
+                            <line x1="74" y1="96" x2="79" y2="96" stroke="#1e293b" stroke-width="1.5"/>
+                            <line x1="121" y1="96" x2="126" y2="96" stroke="#1e293b" stroke-width="1.5"/>
+                            <!-- Hair (Dark Brown/Black Modern Cut) -->
+                            <path d="M72 96C72 70 128 70 128 96C128 90 120 80 100 80C80 80 72 90 72 96Z" fill="#111827"/>
+                            <path d="M72 96L75 105L78 97Z" fill="#111827" />
+                            <path d="M128 96L125 105L122 97Z" fill="#111827" />
+                            <!-- Eyebrows -->
+                            <path d="M78 89C82 87 88 88 91 90" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M122 89C118 87 112 88 109 90" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+                            <!-- Smiling Lips -->
+                            <path d="M92 113C96 117 104 117 108 113" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round"/>
+                            <!-- Modern Blue Suit Coat with neat lapels -->
+                            <path d="M64 150 C64 140 76 135 84 135 L116 135 C124 135 136 140 136 150 L146 230 L54 230 Z" fill="#1e3a8a"/>
+                            <path d="M82 135 L96 185 L100 185 L84 135 Z" fill="#172554"/>
+                            <path d="M118 135 L104 185 L100 185 L116 135 Z" fill="#172554"/>
+                            <!-- Red pocket square detail -->
+                            <path d="M73 162 L81 157 L85 162 Z" fill="#be123c"/>
+                            <!-- Text Tag overlay -->
+                            <text x="100" y="215" fill="#94a3b8" font-size="9" font-weight="bold" letter-spacing="1" text-anchor="middle">RELOAD OR UPLOAD JPG</text>
+                            
+                            <defs>
+                                <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#3b82f6" />
+                                    <stop offset="100%" stop-color="#10b981" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- LAYER 2: High Resolution Professional portrait from system assets (Fades in over fallback once successfully loaded) -->
                     <img src="1756924297300~3.jpg" 
                          alt="Md Wahid Alam Chowdhury Portrait Headshot" 
-                         class="relative z-10 w-full h-full object-cover object-[center_15%] transition-all duration-700 group-hover:scale-105"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x800/1e293b/ffffff?text=Wahid+Alam+Chowdhury'">
+                         class="absolute inset-0 w-full h-full object-cover object-[center_15%] transition-opacity duration-700 opacity-0 z-10 group-hover:scale-105"
+                         onload="this.classList.remove('opacity-0')"
+                         onerror="console.log('Using vector avatar fallback...')">
                 </div>
                 
                 <!-- Floating badge: Scrum Alliance Certification -->
@@ -319,8 +371,9 @@
                 <div class="timeline-item left">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-red-50 p-3.5 rounded-2xl text-red-500 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
-                                <i class="fas fa-triangle-exclamation text-lg"></i>
+                            <!-- Vector warning node -->
+                            <div class="bg-red-50 p-3 rounded-2xl text-red-500 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-red-500 uppercase tracking-widest">Phase 1: Diagnosis</span>
@@ -330,8 +383,9 @@
                         <p class="text-slate-600 mb-4 text-sm leading-relaxed">
                             When taking over the savings engine, total active subscriptions were stuck at <span class="font-semibold text-primary">0.7M</span>, with a bare-minimum growth rate of only 20k-30k monthly subscriptions. The product suffered from friction-filled onboarding and complex workflows.
                         </p>
-                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500 font-medium">
-                            <i class="fas fa-briefcase mr-1"></i> Assistant Product Manager, Financial Products
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500 font-medium flex items-center gap-2">
+                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Assistant Product Manager, Financial Products
                         </div>
                     </div>
                 </div>
@@ -340,8 +394,9 @@
                 <div class="timeline-item right">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-blue-50 p-3.5 rounded-2xl text-accent flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
-                                <i class="fas fa-rocket text-lg"></i>
+                            <!-- Vector Rocket node -->
+                            <div class="bg-blue-50 p-3 rounded-2xl text-accent flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-accent uppercase tracking-widest">Phase 2: Distribution Scale</span>
@@ -363,8 +418,9 @@
                 <div class="timeline-item left">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-violet-50 p-3.5 rounded-2xl text-violet-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
-                                <i class="fas fa-fingerprint text-lg"></i>
+                            <!-- Vector layout target node -->
+                            <div class="bg-violet-50 p-3 rounded-2xl text-violet-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-violet-600 uppercase tracking-widest">Phase 3: Optimization</span>
@@ -385,9 +441,11 @@
                 <div class="timeline-item right">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <!-- FIXED PHASE 4 ICON CONTAINER: Restored visibility by applying proper centering & icon styling -->
-                            <div class="bg-amber-50 p-3.5 rounded-2xl text-amber-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
-                                <i class="fas fa-shield-halved text-lg"></i>
+                            <!-- Vector secure shield node (Explicit Inline SVG to guarantee it's 100% visible) -->
+                            <div class="bg-amber-50 p-3 rounded-2xl text-amber-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">Phase 4: Operations</span>
@@ -405,18 +463,17 @@
                 </div>
             </div>
             
-            <!-- Overall Impact highlight: Rephrased text with dynamic graph representation of 7 Million achievement -->
             <div class="mt-20 max-w-4xl mx-auto">
                  <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden border border-slate-800">
                      <div class="absolute top-0 right-0 p-6 opacity-10 pointer-events-none">
-                         <i class="fas fa-trophy text-9xl text-yellow-400"></i>
+                         <svg class="w-32 h-32 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
                      </div>
                      
                      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                          <!-- Left Side: Interactive Metrics & Phrasing -->
                          <div class="lg:col-span-7 space-y-4">
                              <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-semibold text-emerald-400">
-                                 <i class="fas fa-circle-check"></i>
+                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                  <span>Verified Fintech Scaling Strategy</span>
                              </div>
                              <h4 class="text-2xl md:text-3xl font-black tracking-tight text-white">
@@ -443,7 +500,7 @@
                              <div class="flex justify-between items-center">
                                  <span class="text-xs font-bold text-slate-400 tracking-wider uppercase">User Base Expansion</span>
                                  <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full font-bold flex items-center gap-1">
-                                     <i class="fas fa-chart-line"></i> Active
+                                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Active
                                  </span>
                              </div>
                              
@@ -523,7 +580,7 @@
                                 </div>
                             </div>
                             <div class="bg-blue-950/60 border border-blue-900/40 px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-300 inline-block animate-float">
-                                <i class="fas fa-trophy text-amber-400 mr-1.5"></i> Live Scoreboard Points: <strong>381 pts</strong>
+                                ⚽ Match Prediction Earns: <strong>381 pts</strong>
                             </div>
                         </div>
                     </div>
@@ -533,7 +590,7 @@
                             <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold">Web App</span>
                         </div>
                         <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
-                            A highly engaging live match predictor built for workplace colleagues during the FIFA 2026 tourney. Includes scores, dynamic prediction models, booster quizzes, and live scoreboards.
+                            A highly engaging live match predictor built for workplace colleagues during the FIFA 2026 tourney. Includes scores, prediction calculations, booster quizzes, and dynamic leaderboards.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
                             <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Gemini AI</span>
@@ -562,7 +619,7 @@
                                     <div class="bg-emerald-500 h-full w-[65%]" style="transition: width 1s;"></div>
                                 </div>
                                 <div class="flex justify-between items-center pt-1 border-t border-slate-800/80">
-                                    <span class="text-xs text-emerald-400 font-bold"><i class="fas fa-coins mr-1"></i> Suggested Saving Plan</span>
+                                    <span class="text-xs text-emerald-400 font-bold">💡 Suggested saving plan</span>
                                     <span class="text-xs font-bold text-white bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded">bKash DPS</span>
                                 </div>
                             </div>
@@ -606,7 +663,7 @@
                                 <div class="text-xs font-bold text-slate-300">Goal Mobilized:</div>
                                 <div class="text-base font-extrabold text-white">BDT 58,55,154</div>
                                 <div class="flex items-center gap-1.5 text-[10px] text-slate-400">
-                                    <i class="fas fa-table text-emerald-400"></i> Synced to Google Sheets API
+                                    📊 Synced to Google Sheets API
                                 </div>
                             </div>
                         </div>
@@ -644,7 +701,7 @@
                                 </div>
                                 <div class="flex-1 relative mx-2">
                                     <div class="border-t border-dashed border-amber-500/55 w-full h-1"></div>
-                                    <i class="fas fa-plane text-amber-400 absolute -top-2 left-[50%] -translate-x-1/2 text-sm animate-float"></i>
+                                    <div class="absolute -top-2 left-[50%] -translate-x-1/2 text-sm animate-float">✈️</div>
                                 </div>
                                 <div class="text-center">
                                     <div class="text-lg">🏯</div>
@@ -652,7 +709,7 @@
                                 </div>
                             </div>
                             <div class="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/30 px-3 py-1 rounded-full text-xs text-amber-300 font-bold">
-                                <i class="fas fa-sparkles"></i> Gemini AI BYOK Engine Connected
+                                Sparkles Gemini AI BYOK Connected
                             </div>
                         </div>
                     </div>
@@ -689,35 +746,36 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <a href="mailto:wahid.brandprofessional@gmail.com" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
-                    <i class="fas fa-envelope text-2xl text-accent group-hover:scale-110 transition-transform"></i>
+                    <span class="text-2xl text-accent group-hover:scale-110 transition-transform">✉️</span>
                     <span class="text-sm font-semibold tracking-wide">wahid.brandprofessional@gmail.com</span>
                 </a>
                 <a href="tel:+8801326602477" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
-                    <i class="fas fa-phone-alt text-2xl text-accent group-hover:scale-110 transition-transform"></i>
+                    <span class="text-2xl text-accent group-hover:scale-110 transition-transform">📞</span>
                     <span class="text-sm font-semibold tracking-wide">+8801326602477</span>
                 </a>
                 <a href="https://www.linkedin.com/in/md-wahid-alam-chowdhury-cspo%C2%AE-24a919141/" target="_blank" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
-                    <i class="fab fa-linkedin-in text-2xl text-accent group-hover:scale-110 transition-transform"></i>
+                    <span class="text-2xl text-accent group-hover:scale-110 transition-transform">🔗</span>
                     <span class="text-sm font-semibold tracking-wide">Md Wahid Alam Chowdhury</span>
                 </a>
             </div>
 
             <div class="border-t border-slate-800 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm">
                 <p>&copy; 2026 Md Wahid Alam Chowdhury. Proud CSPO® Portfolio.</p>
-                <p class="mt-2 md:mt-0">Crafted professionally with <i class="fas fa-heart text-red-500 mx-1"></i> & AI</p>
+                <p class="mt-2 md:mt-0">Crafted professionally with ❤️ & AI</p>
             </div>
         </div>
     </section>
 
+    
     <!-- Modal: FIFA Worldcup Predictor -->
     <div id="modal-fifa" class="modal">
         <div class="modal-content">
             <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
                 <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
-                    <i class="fas fa-trophy text-amber-500"></i> FIFA 2026 Worldcup Predictor
+                    🏆 FIFA 2026 Worldcup Predictor
                 </h3>
                 <button onclick="closeModal('modal-fifa')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
-                    <i class="fas fa-times text-lg"></i>
+                    ✕
                 </button>
             </div>
             <div class="p-8">
@@ -729,15 +787,15 @@
                 <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-8">
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-accent mt-1"></i>
+                        <span class="text-accent mt-0.5">✔</span>
                         <span><strong>Match Predictions:</strong> Real-time calculations with automatic point rewards aligned with Group, Knockout, or final scorelines.</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-accent mt-1"></i>
+                        <span class="text-accent mt-0.5">✔</span>
                         <span><strong>Booster Quizzes:</strong> Dynamically injected daily quizzes built based on the statistical matches ahead to multiply scoring stakes.</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-accent mt-1"></i>
+                        <span class="text-accent mt-0.5">✔</span>
                         <span><strong>Unified Database Integration:</strong> Direct connection to live cloud databases securely managing point matrices.</span>
                     </li>
                 </ul>
@@ -746,7 +804,7 @@
                     <span class="text-xs text-slate-400 font-medium">Built completely free using Gemini, Firebase & GitHub Pages.</span>
                     <a href="https://autunwahid.github.io/FIFA26PredictorbyFP/" target="_blank" class="bg-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-600 transition-all inline-flex items-center gap-2 shadow-md">
                         <span>Launch App Live</span>
-                        <i class="fas fa-external-link-alt text-xs"></i>
+                        <span>↗</span>
                     </a>
                 </div>
             </div>
@@ -758,10 +816,10 @@
         <div class="modal-content">
             <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
                 <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
-                    <i class="fas fa-calculator text-emerald-500"></i> Bangladesh Tax Calculator
+                    🧮 Bangladesh Tax Calculator
                 </h3>
                 <button onclick="closeModal('modal-tax')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
-                    <i class="fas fa-times text-lg"></i>
+                    ✕
                 </button>
             </div>
             <div class="p-8">
@@ -773,15 +831,15 @@
                 <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-8">
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                        <span class="text-emerald-500 mt-0.5">✔</span>
                         <span><strong>Dynamic Slabs Calculation:</strong> Seamless processing of progressive income matrices for rapid calculation.</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                        <span class="text-emerald-500 mt-0.5">✔</span>
                         <span><strong>Intelligent Rebate Advisor:</strong> Automatically evaluates thresholds. If required rebate capital is >120k BDT, it highlights diversified Mutual Funds; for &lt;=120k BDT investments, it targets high-yield bKash Digital DPS (the legal rebate ceiling).</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                        <span class="text-emerald-500 mt-0.5">✔</span>
                         <span><strong>Interactive Slider Advisor:</strong> Users can preview exact marginal tax savings in real-time as they toggle potential investment values.</span>
                     </li>
                 </ul>
@@ -790,7 +848,7 @@
                     <span class="text-xs text-slate-400 font-medium">Built as an organic social-good tool using lightweight JS.</span>
                     <a href="https://autunwahid.github.io/TaxCalcBD2026-27/" target="_blank" class="bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-all inline-flex items-center gap-2 shadow-md">
                         <span>Launch App Live</span>
-                        <i class="fas fa-external-link-alt text-xs"></i>
+                        <span>↗</span>
                     </a>
                 </div>
             </div>
@@ -802,16 +860,16 @@
         <div class="modal-content">
             <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
                 <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
-                    <i class="fas fa-wallet text-purple-500"></i> Realtime Personal Wealth Dashboard
+                    💼 Realtime Personal Wealth Dashboard
                 </h3>
                 <button onclick="closeModal('modal-wealth')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
-                    <i class="fas fa-times text-lg"></i>
+                    ✕
                 </button>
             </div>
             <div class="p-8">
                 <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6 rounded-r-xl">
                     <div class="flex gap-3">
-                        <i class="fas fa-lock text-amber-600 mt-0.5"></i>
+                        <span class="text-amber-600 mt-0.5">🔒</span>
                         <p class="text-sm text-amber-800">
                             <strong>Note on Project Privacy:</strong> Because this details sensitive financial asset allocations, the live deployment remains private/secured. It represents structural proof-of-concept modeling for spreadsheet database synchronization.
                         </p>
@@ -826,15 +884,15 @@
                 <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-4">
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span class="text-purple-600 mt-0.5">✔</span>
                         <span><strong>Spreadsheet Synced Engine:</strong> Updates typed in Google Sheets are rendered on the frontend in real-time.</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span class="text-purple-600 mt-0.5">✔</span>
                         <span><strong>Progress Ring Visuals:</strong> Live calculations indicating portfolio growth and milestone completions.</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span class="text-purple-600 mt-0.5">✔</span>
                         <span><strong>Segmented Analytics:</strong> Dynamically visualizes diverse assets, separating immediate operational accounts from locked investments.</span>
                     </li>
                 </ul>
@@ -847,10 +905,10 @@
         <div class="modal-content">
             <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
                 <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
-                    <i class="fas fa-compass text-amber-500"></i> Escape Diaries Travel Planner
+                    🧭 Escape Diaries Travel Planner
                 </h3>
                 <button onclick="closeModal('modal-escape')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
-                    <i class="fas fa-times text-lg"></i>
+                    ✕
                 </button>
             </div>
             <div class="p-8">
@@ -862,15 +920,15 @@
                 <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-8">
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span class="text-amber-500 mt-0.5">✔</span>
                         <span><strong>Structured Gemini Integration:</strong> Orchestrates optimized prompts to Google's LLM, producing beautiful HTML-styled day-by-day itineraries.</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span class="text-amber-500 mt-0.5">✔</span>
                         <span><strong>Comprehensive Utility Suite:</strong> Provides automated flight providers lookup, localized communication dictionaries, map markers, and travel safety advice.</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
-                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span class="text-amber-500 mt-0.5">✔</span>
                         <span><strong>Rich Media Recommendations:</strong> Fetches matching visual travel guides and local cuisine recommendations dynamically.</span>
                     </li>
                 </ul>
@@ -879,8 +937,128 @@
                     <span class="text-xs text-slate-400 font-medium">Harnesses Google's latest Gemini models on client side.</span>
                     <a href="https://autunwahid.github.io/EscapeDiaries/" target="_blank" class="bg-amber-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-amber-700 transition-all inline-flex items-center gap-2 shadow-md">
                         <span>Launch App Live</span>
-                        <i class="fas fa-external-link-alt text-xs"></i>
+                        <span>↗</span>
                     </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-cv-center" class="modal">
+        <div class="modal-content max-w-4xl">
+            <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl text-accent">📄</span>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-primary">Wahid's Resume Center</h3>
+                        <p class="text-xs text-slate-500">Interactive Web-Viewer & PDF Download System</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="window.print()" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5">
+                        <span>🖨️</span> Print
+                    </button>
+                    <button onclick="closeModal('modal-cv-center')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
+                        ✕
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-8 space-y-8">
+                <!-- PDF download warning / guidance card -->
+                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-5 flex flex-col md:flex-row gap-4 items-start justify-between">
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-blue-900 text-sm flex items-center gap-1.5">
+                            <span>🚀</span> Looking for the PDF Copy?
+                        </h4>
+                        <p class="text-xs text-blue-700 leading-relaxed max-w-xl">
+                            Click the button on the right to download the direct PDF version. If downloading from GitHub Pages displays an error, please ensure you uploaded <code class="bg-blue-100 px-1 py-0.5 rounded text-[11px] font-mono">Md Wahid Alam Chowdhury_Product Manager_Resume.pdf</code> to your repository's root.
+                        </p>
+                    </div>
+                    <!-- Download Link pointing exact named file verbatim -->
+                    <a href="Md Wahid Alam Chowdhury_Product Manager_Resume.pdf" download="Md Wahid Alam Chowdhury_Product Manager_Resume.pdf" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl font-semibold text-sm transition-all shadow-md whitespace-nowrap shrink-0 flex items-center gap-1.5">
+                        <span>📥</span> Download PDF
+                    </a>
+                </div>
+
+                <!-- Complete structured print-friendly Web-version Resume -->
+                <div class="border border-slate-200 rounded-2xl p-6 md:p-8 bg-white shadow-inner space-y-6 text-slate-800" id="resume-print-area">
+                    <div class="text-center space-y-2 border-b border-slate-100 pb-6">
+                        <h1 class="text-3xl font-extrabold text-slate-900">Md Wahid Alam Chowdhury</h1>
+                        <p class="text-sm font-semibold text-accent uppercase tracking-wider">Product Manager | Scaled to 7M+ Users | CSPO® | Fintech Expert</p>
+                        <div class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs text-slate-500">
+                            <span>📞 +8801326602477</span>
+                            <span>|</span>
+                            <span>✉️ wahid.brandprofessional@gmail.com</span>
+                            <span>|</span>
+                            <span>🔗 LinkedIn: Md Wahid Alam Chowdhury</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Summary -->
+                    <div class="space-y-2">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-1">Professional Summary</h3>
+                        <p class="text-xs leading-relaxed text-slate-600">
+                            Strategic and data-driven Product Manager with 6+ years of experience scaling fintech and consumer products for millions of users in emerging markets. Proven track record of end-to-end product ownership, including market analysis, roadmap development, stakeholder alignment, and go-to-market strategy. Led cross-functional teams to deliver 117%+ YoY user growth and launch award-winning campaigns. Strong expertise in Agile, UX optimization, and scaling adoption through A/B testing and continuous feedback loops. Open to relocation and global product roles.
+                        </p>
+                    </div>
+
+                    <!-- Professional Experience -->
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-1">Professional Experience</h3>
+                        
+                        <!-- Role 1 -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-900">bKash Limited</h4>
+                                    <p class="text-xs font-medium text-slate-500">Assistant Product Manager, Financial Products</p>
+                                </div>
+                                <span class="text-[11px] font-bold text-slate-400 whitespace-nowrap">Jan 2023 - Present</span>
+                            </div>
+                            <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-600">
+                                <li>Spearheaded launch of Bangladesh's first Weekly DPS product starting from BDT 250 ($2), onboarding 2 million customers within months.</li>
+                                <li>Launched paperless Savings onboarding journey & Savings Marketplace, ensuring 7 Million subscriptions targeting the 70% unbanked people.</li>
+                                <li>Launched Assisted model of Savings Subscription to reach rural populations, resulting in ~117% growth.</li>
+                                <li>Introduced real-time account opening & payout features, reducing drop-off rates by 28%.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Role 2 -->
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-900">Walton Home Appliances</h4>
+                                    <p class="text-xs font-medium text-slate-500">Assistant Product Manager</p>
+                                </div>
+                                <span class="text-[11px] font-bold text-slate-400 whitespace-nowrap">Aug 2021 - Dec 2022</span>
+                            </div>
+                            <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-600">
+                                <li>Launched 23 new SKUs, resulting in 114% growth in product category sales.</li>
+                                <li>Reduced forecast variance to 16% by improving PSI planning and demand analysis.</li>
+                                <li>Built and led a 12-member dedicated sales force; drove 62% YoY growth in net profit.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Certifications & Skills Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                        <div class="space-y-2">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-1">Certifications</h3>
+                            <ul class="list-disc pl-4 space-y-1 text-[11px] text-slate-600">
+                                <li><strong>CSPO®:</strong> Certified Scrum Product Owner - Scrum Alliance</li>
+                                <li><strong>ISO 9001:2015:</strong> Product Management Bureau Veritas Group</li>
+                                <li><strong>ITIL Foundation:</strong> IT Service Management - PeopleCert</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-1">Skills & Tools</h3>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">
+                                <strong>Methodologies:</strong> Agile/Scrum, Product Roadmapping, UX Research, Customer Journey Mapping, Priority Matrices (RICE/WSJF).<br>
+                                <strong>Analytics & Platforms:</strong> Oracle Data Marts, SQL Query Formulation, A/B Testing, JIRA, Figma, Microsoft Excel.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
