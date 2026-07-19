@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Wahid Alam Chowdhury | Product Manager Portfolio</title>
+    <title>Wahid's Portfolio | Product Manager</title>
     <!-- Tailwind CSS for utility-first responsive layout styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for high-quality professional iconography -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts Inter for a modern, sleek technical aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -141,7 +141,7 @@
             margin: auto;
             padding: 0;
             width: 95%;
-            max-width: 950px;
+            max-width: 800px;
             border-radius: 24px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
             transform: scale(0.95);
@@ -182,6 +182,34 @@
             background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
             background-size: 24px 24px;
         }
+
+        /* Pulse and float animations for interactive panels */
+        @keyframes drift {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
+        }
+        .animate-drift {
+            animation: drift 4s ease-in-out infinite;
+        }
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float {
+            animation: float-slow 3s ease-in-out infinite;
+        }
+
+        /* SVG Line drawing animation for Milestone Achievement */
+        @keyframes drawLine {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        .animated-chart-line {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: drawLine 2.5s ease-out forwards;
+        }
     </style>
 </head>
 <body class="antialiased bg-slate-50 text-slate-900">
@@ -190,7 +218,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <span class="font-bold text-xl text-primary tracking-tight">Wahid<span class="text-accent">.</span>PM</span>
+                    <span class="font-bold text-xl text-primary tracking-tight">Wahid's Portfolio<span class="text-accent">.</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="text-secondary hover:text-accent px-3 py-2 rounded-md text-sm font-semibold transition-colors">About</a>
@@ -231,7 +259,7 @@
                 <div class="bg-white px-5 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
                     <div class="bg-emerald-50 p-3 rounded-xl text-highlight"><i class="fas fa-chart-line fa-lg"></i></div>
                     <div>
-                        <p class="text-xs text-slate-400 uppercase font-bold tracking-wider font-semibold">YoY Expansion</p>
+                        <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">YoY Expansion</p>
                         <p class="font-extrabold text-2xl text-slate-900">117%+ Growth</p>
                     </div>
                 </div>
@@ -255,19 +283,16 @@
             <div class="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[450px]">
                 <div class="absolute inset-0 bg-gradient-to-tr from-accent to-highlight rounded-[32px] opacity-15 blur-3xl"></div>
                 
-                <!-- Main Headshot Frame with Fade-In Transition -->
                 <div class="relative w-full h-full bg-white rounded-[28px] shadow-2xl border-4 border-white overflow-hidden group">
-                    <div class="absolute inset-0 bg-slate-800 animate-pulse flex items-center justify-center">
-                        <i class="fas fa-user-tie text-slate-600 text-4xl"></i>
-                    </div>
-                    <img src="./1756924297300~3.jpg" 
+                    <!-- High Resolution Professional portrait from system assets -->
+                    <img src="1756924297300~3.jpg" 
                          alt="Md Wahid Alam Chowdhury Portrait Headshot" 
-                         class="relative z-10 w-full h-full object-cover object-[center_15%] opacity-0 transition-all duration-700 group-hover:scale-105"
-                         onload="this.classList.remove('opacity-0')">
+                         class="relative z-10 w-full h-full object-cover object-[center_15%] transition-all duration-700 group-hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x800/1e293b/ffffff?text=Wahid+Alam+Chowdhury'">
                 </div>
                 
                 <!-- Floating badge: Scrum Alliance Certification -->
-                <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-20">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Scrum_Alliance_logo.svg/1200px-Scrum_Alliance_logo.svg.png" 
                          alt="CSPO Certification Badge" 
                          class="h-9 w-auto object-contain"
@@ -294,8 +319,8 @@
                 <div class="timeline-item left">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-red-50 p-3.5 rounded-2xl text-red-500">
-                                <i class="fas fa-exclamation-triangle fa-lg"></i>
+                            <div class="bg-red-50 p-3.5 rounded-2xl text-red-500 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <i class="fas fa-triangle-exclamation text-lg"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-red-500 uppercase tracking-widest">Phase 1: Diagnosis</span>
@@ -315,8 +340,8 @@
                 <div class="timeline-item right">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-blue-50 p-3.5 rounded-2xl text-accent">
-                                <i class="fas fa-rocket fa-lg"></i>
+                            <div class="bg-blue-50 p-3.5 rounded-2xl text-accent flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <i class="fas fa-rocket text-lg"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-accent uppercase tracking-widest">Phase 2: Distribution Scale</span>
@@ -338,8 +363,8 @@
                 <div class="timeline-item left">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-violet-50 p-3.5 rounded-2xl text-violet-600">
-                                <i class="fas fa-fingerprint fa-lg"></i>
+                            <div class="bg-violet-50 p-3.5 rounded-2xl text-violet-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <i class="fas fa-fingerprint text-lg"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-violet-600 uppercase tracking-widest">Phase 3: Optimization</span>
@@ -360,8 +385,9 @@
                 <div class="timeline-item right">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="bg-amber-50 p-3.5 rounded-2xl text-amber-600">
-                                <i class="fas fa-shield-halved fa-lg"></i>
+                            <!-- FIXED PHASE 4 ICON CONTAINER: Restored visibility by applying proper centering & icon styling -->
+                            <div class="bg-amber-50 p-3.5 rounded-2xl text-amber-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
+                                <i class="fas fa-shield-halved text-lg"></i>
                             </div>
                             <div>
                                 <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">Phase 4: Operations</span>
@@ -379,17 +405,84 @@
                 </div>
             </div>
             
-            <!-- Overall Impact highlight -->
-            <div class="mt-16 text-center max-w-2xl mx-auto">
-                 <div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl relative overflow-hidden">
-                     <div class="absolute right-0 bottom-0 translate-y-6 translate-x-6 text-slate-800 text-9xl font-extrabold select-none pointer-events-none opacity-20">7M</div>
-                     <h4 class="text-xl font-bold text-slate-200 mb-2">Total Combined Portfolio Impact</h4>
-                     <p class="text-slate-300 text-base leading-relaxed mb-4">
-                         Referencing our documentation in <span class="text-highlight font-semibold">"case studies at bKash.docx"</span>, these optimizations collectively brought bKash Savings to more than 7 Million total subscriptions within a 3.5-year horizon.
-                     </p>
-                     <div class="inline-flex gap-2 items-center bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold">
-                         <i class="fas fa-check-circle text-highlight"></i>
-                         <span>Verified Fintech Case Studies</span>
+            <!-- Overall Impact highlight: Rephrased text with dynamic graph representation of 7 Million achievement -->
+            <div class="mt-20 max-w-4xl mx-auto">
+                 <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden border border-slate-800">
+                     <div class="absolute top-0 right-0 p-6 opacity-10 pointer-events-none">
+                         <i class="fas fa-trophy text-9xl text-yellow-400"></i>
+                     </div>
+                     
+                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                         <!-- Left Side: Interactive Metrics & Phrasing -->
+                         <div class="lg:col-span-7 space-y-4">
+                             <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-semibold text-emerald-400">
+                                 <i class="fas fa-circle-check"></i>
+                                 <span>Verified Fintech Scaling Strategy</span>
+                             </div>
+                             <h4 class="text-2xl md:text-3xl font-black tracking-tight text-white">
+                                 A Seamless Path to Financial Inclusion
+                             </h4>
+                             <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                                 By synthesizing targeted product offerings, compressing friction in the checkout experience, and taking proactive ownership of user disputes, we successfully unlocked savings products for underserved demographics across the country.
+                             </p>
+                             <div class="flex items-center gap-6 pt-2">
+                                 <div>
+                                     <span class="text-slate-400 text-xs font-semibold block uppercase tracking-wider">Acquisition Velocity</span>
+                                     <span class="text-xl font-bold text-emerald-400">10x Growth</span>
+                                 </div>
+                                 <div class="border-l border-slate-800 h-10"></div>
+                                 <div>
+                                     <span class="text-slate-400 text-xs font-semibold block uppercase tracking-wider">Maturity Performance</span>
+                                     <span class="text-xl font-bold text-accent">+600% Change</span>
+                                 </div>
+                             </div>
+                         </div>
+                         
+                         <!-- Right Side: Animated SVG Growth Line Diagram (0.7M to 7M) -->
+                         <div class="lg:col-span-5 bg-slate-900/60 p-6 rounded-2xl border border-slate-800/80 space-y-4 shadow-inner relative group cursor-pointer" onclick="restartGrowthAnimation()">
+                             <div class="flex justify-between items-center">
+                                 <span class="text-xs font-bold text-slate-400 tracking-wider uppercase">User Base Expansion</span>
+                                 <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full font-bold flex items-center gap-1">
+                                     <i class="fas fa-chart-line"></i> Active
+                                 </span>
+                             </div>
+                             
+                             <!-- Micro chart space -->
+                             <div class="h-32 w-full relative flex items-end">
+                                 <svg viewBox="0 0 200 100" class="w-full h-full">
+                                     <defs>
+                                         <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                             <stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/>
+                                             <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+                                         </linearGradient>
+                                     </defs>
+                                     <!-- Shadow Fill -->
+                                     <path d="M 10,90 Q 50,85 100,50 T 190,10 L 190,90 Z" fill="url(#chartGrad)"></path>
+                                     <!-- Axis grids -->
+                                     <line x1="10" y1="90" x2="190" y2="90" stroke="#1e293b" stroke-width="1"></line>
+                                     <line x1="10" y1="50" x2="190" y2="50" stroke="#1e293b" stroke-dasharray="2" stroke-width="0.5"></line>
+                                     <line x1="10" y1="10" x2="190" y2="10" stroke="#1e293b" stroke-dasharray="2" stroke-width="0.5"></line>
+                                     <!-- Interactive point markers -->
+                                     <circle cx="10" cy="90" r="4" fill="#ef4444" class="relative group-hover:scale-150 transition-transform"></circle>
+                                     <circle cx="190" cy="10" r="5" fill="#10b981" class="relative animate-ping"></circle>
+                                     <circle cx="190" cy="10" r="4" fill="#10b981"></circle>
+                                     <!-- Growth Curve Line -->
+                                     <path id="growthCurve" d="M 10,90 Q 50,85 100,50 T 190,10" fill="none" stroke="#3b82f6" stroke-width="3" class="animated-chart-line"></path>
+                                 </svg>
+                                 <!-- Labels overlay -->
+                                 <div class="absolute left-0 bottom-1.5 text-[9px] text-red-400 font-extrabold flex items-center gap-0.5">
+                                     <span>0.7M</span>
+                                 </div>
+                                 <div class="absolute right-0 top-1 text-[10px] text-emerald-400 font-extrabold flex items-center gap-0.5 animate-bounce">
+                                     <span>7.0M+ Active</span>
+                                 </div>
+                             </div>
+                             
+                             <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between">
+                                 <span class="text-[11px] text-slate-400 font-medium">Click chart to replay curve timeline</span>
+                                 <span class="text-xs font-black text-slate-200">3.5-Year Growth Playbook</span>
+                             </div>
+                         </div>
                      </div>
                  </div>
             </div>
@@ -408,22 +501,30 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- Project 1: FIFA -->
+                <!-- Project 1: FIFA Scoreboard Visual -->
                 <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
-                    <!-- Image Card with Skeleton Loader -->
-                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-fifa')">
-                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                            <span class="text-xs">Loading Cover...</span>
+                    <!-- Scoreboard Aesthetic HTML Widget Header -->
+                    <div class="h-52 bg-slate-950 relative overflow-hidden flex flex-col items-center justify-center p-6 text-white cursor-pointer select-none" onclick="openModal('modal-fifa')">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-indigo-950/50 z-0"></div>
+                        <div class="absolute top-4 right-4 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 animate-pulse">
+                            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Live
                         </div>
-                        <img src="./image_a4c843.png" 
-                             alt="FIFA Predictor Cover Image" 
-                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"
-                             onload="this.classList.remove('opacity-0')">
-                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
-                                <i class="fas fa-eye"></i> View Project Specs
-                            </span>
+                        <div class="relative z-10 text-center space-y-3">
+                            <div class="text-xs text-blue-400 font-extrabold tracking-widest uppercase">FIFA 2026 WORLD CUP PREDICTOR</div>
+                            <div class="flex items-center justify-center gap-6">
+                                <div class="text-center">
+                                    <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xl shadow-lg">🇪🇸</div>
+                                    <div class="text-xs font-semibold text-slate-300 mt-1">Spain</div>
+                                </div>
+                                <div class="bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800 font-bold text-lg text-gradient">VS</div>
+                                <div class="text-center">
+                                    <div class="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-xl shadow-lg">🇦🇷</div>
+                                    <div class="text-xs font-semibold text-slate-300 mt-1">Argentina</div>
+                                </div>
+                            </div>
+                            <div class="bg-blue-950/60 border border-blue-900/40 px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-300 inline-block animate-float">
+                                <i class="fas fa-trophy text-amber-400 mr-1.5"></i> Live Scoreboard Points: <strong>381 pts</strong>
+                            </div>
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -440,28 +541,31 @@
                             <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">GitHub Pages</span>
                         </div>
                         <button onclick="openModal('modal-fifa')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
-                            Explore Technical Specs
+                            Explore Features
                         </button>
                     </div>
                 </div>
 
-                <!-- Project 2: Tax Calculator -->
+                <!-- Project 2: Tax Calculator Visual -->
                 <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
-                    <!-- Image Card with Skeleton Loader -->
-                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-tax')">
-                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                            <span class="text-xs">Loading Cover...</span>
-                        </div>
-                        <img src="./image_a53544.png" 
-                             alt="Tax Calculator Cover Image" 
-                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105" 
-                             style="object-position: top;"
-                             onload="this.classList.remove('opacity-0')">
-                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
-                                <i class="fas fa-eye"></i> View Project Specs
-                            </span>
+                    <!-- Tax Ledger Aesthetic HTML Widget Header -->
+                    <div class="h-52 bg-slate-950 relative overflow-hidden flex flex-col items-center justify-center p-6 text-white cursor-pointer select-none" onclick="openModal('modal-tax')">
+                        <div class="absolute inset-0 bg-gradient-to-r from-emerald-950/40 to-slate-950/50 z-0"></div>
+                        <div class="relative z-10 w-full max-w-sm space-y-3">
+                            <div class="text-xs text-emerald-400 font-extrabold tracking-widest uppercase text-center">BANGLADESH TAX CALCULATOR</div>
+                            <div class="bg-slate-900/90 border border-slate-800 p-3 rounded-xl space-y-2">
+                                <div class="flex justify-between text-xs text-slate-400">
+                                    <span>Taxable Income</span>
+                                    <span>BDT 8,50,000</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-emerald-500 h-full w-[65%]" style="transition: width 1s;"></div>
+                                </div>
+                                <div class="flex justify-between items-center pt-1 border-t border-slate-800/80">
+                                    <span class="text-xs text-emerald-400 font-bold"><i class="fas fa-coins mr-1"></i> Suggested Saving Plan</span>
+                                    <span class="text-xs font-bold text-white bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 rounded">bKash DPS</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -478,27 +582,33 @@
                             <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Fintech Advisory</span>
                         </div>
                         <button onclick="openModal('modal-tax')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
-                            Explore Technical Specs
+                            Explore Features
                         </button>
                     </div>
                 </div>
 
-                <!-- Project 3: Wealth Management -->
+                <!-- Project 3: Wealth Management Visual -->
                 <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
-                    <!-- Image Card with Skeleton Loader -->
-                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-wealth')">
-                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                            <span class="text-xs">Loading Cover...</span>
-                        </div>
-                        <img src="./image_a53487.png" 
-                             alt="Wealth Management Cover Image" 
-                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"
-                             onload="this.classList.remove('opacity-0')">
-                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
-                                <i class="fas fa-eye"></i> View Project Specs
-                            </span>
+                    <!-- Wealth Chart Aesthetic HTML Widget Header -->
+                    <div class="h-52 bg-slate-950 relative overflow-hidden flex flex-col items-center justify-center p-6 text-white cursor-pointer select-none" onclick="openModal('modal-wealth')">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-950/40 to-slate-950/50 z-0"></div>
+                        <div class="relative z-10 flex items-center gap-6 w-full max-w-sm">
+                            <div class="relative flex items-center justify-center">
+                                <svg class="w-24 h-24 transform -rotate-90">
+                                    <circle cx="48" cy="48" r="38" stroke="currentColor" class="text-slate-800" stroke-width="8" fill="transparent" />
+                                    <circle cx="48" cy="48" r="38" stroke="currentColor" class="text-purple-500" stroke-width="8" fill="transparent"
+                                            stroke-dasharray="238" stroke-dashoffset="114" /> <!-- 52% -->
+                                </svg>
+                                <span class="absolute text-sm font-extrabold text-white">52%</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1">
+                                <div class="text-[10px] text-purple-400 font-extrabold tracking-widest uppercase">REALTIME WEALTH COMMAND</div>
+                                <div class="text-xs font-bold text-slate-300">Goal Mobilized:</div>
+                                <div class="text-base font-extrabold text-white">BDT 58,55,154</div>
+                                <div class="flex items-center gap-1.5 text-[10px] text-slate-400">
+                                    <i class="fas fa-table text-emerald-400"></i> Synced to Google Sheets API
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -515,27 +625,35 @@
                             <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Relational Models</span>
                         </div>
                         <button onclick="openModal('modal-wealth')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
-                            Explore Technical Specs
+                            Explore Features
                         </button>
                     </div>
                 </div>
 
-                <!-- Project 4: Escape Diaries -->
+                <!-- Project 4: Escape Diaries Visual -->
                 <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
-                    <!-- Image Card with Skeleton Loader -->
-                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-escape')">
-                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                            <span class="text-xs">Loading Cover...</span>
-                        </div>
-                        <img src="./image_a5400d.png" 
-                             alt="Escape Diaries Cover Image" 
-                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"
-                             onload="this.classList.remove('opacity-0')">
-                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
-                                <i class="fas fa-eye"></i> View Project Specs
-                            </span>
+                    <!-- Itinerary Path Aesthetic HTML Widget Header -->
+                    <div class="h-52 bg-slate-950 relative overflow-hidden flex flex-col items-center justify-center p-6 text-white cursor-pointer select-none" onclick="openModal('modal-escape')">
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-950/40 to-slate-950/50 z-0"></div>
+                        <div class="relative z-10 text-center space-y-3 w-full">
+                            <div class="text-[10px] text-amber-400 font-extrabold tracking-widest uppercase">ESCAPE DIARIES AI TRAVEL PLANNER</div>
+                            <div class="flex items-center justify-between px-6">
+                                <div class="text-center">
+                                    <div class="text-lg">🌴</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">Bangkok</div>
+                                </div>
+                                <div class="flex-1 relative mx-2">
+                                    <div class="border-t border-dashed border-amber-500/55 w-full h-1"></div>
+                                    <i class="fas fa-plane text-amber-400 absolute -top-2 left-[50%] -translate-x-1/2 text-sm animate-float"></i>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-lg">🏯</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">Ayutthaya</div>
+                                </div>
+                            </div>
+                            <div class="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/30 px-3 py-1 rounded-full text-xs text-amber-300 font-bold">
+                                <i class="fas fa-sparkles"></i> Gemini AI BYOK Engine Connected
+                            </div>
                         </div>
                     </div>
                     <div class="p-8 flex flex-col flex-grow">
@@ -552,7 +670,7 @@
                             <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">BYOK Model</span>
                         </div>
                         <button onclick="openModal('modal-escape')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
-                            Explore Technical Specs
+                            Explore Features
                         </button>
                     </div>
                 </div>
@@ -603,44 +721,12 @@
                 </button>
             </div>
             <div class="p-8">
-                <!-- Project Visual Assets Block -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <!-- Screenshot 1 -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 1</span>
-                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
-                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                                <span class="text-xs">Loading Match Predictor Panel...</span>
-                            </div>
-                            <img src="./image_a4c843.png" 
-                                 alt="FIFA Match-wise Prediction Panel" 
-                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
-                                 onload="this.classList.remove('opacity-0')">
-                        </div>
-                    </div>
-                    <!-- Screenshot 2 -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 2</span>
-                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
-                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                                <span class="text-xs">Loading Leaderboard Panel...</span>
-                            </div>
-                            <img src="./image_a4c883.png" 
-                                 alt="FIFA Live Leaderboard and Scoring Standings" 
-                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
-                                 onload="this.classList.remove('opacity-0')">
-                        </div>
-                    </div>
-                </div>
-                
                 <h4 class="font-extrabold text-lg mb-3 text-primary">Project Narrative</h4>
                 <p class="text-slate-600 mb-6 leading-relaxed">
                     Designed as a fun, active social application for corporate engagement during the FIFA 2026 tournament. It managed rapid data updates via Firebase and served up instant prediction metrics, fostering intense interaction within our company.
                 </p>
                 
-                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-8">
                     <li class="flex items-start gap-3 text-slate-600">
                         <i class="fas fa-check-circle text-accent mt-1"></i>
@@ -679,44 +765,12 @@
                 </button>
             </div>
             <div class="p-8">
-                <!-- Project Visual Assets Block -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <!-- Screenshot 1 -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 1</span>
-                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
-                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                                <span class="text-xs">Loading Configuration Interface...</span>
-                            </div>
-                            <img src="./image_a53544.png" 
-                                 alt="Tax Setup and Configuration Interface" 
-                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
-                                 onload="this.classList.remove('opacity-0')">
-                        </div>
-                    </div>
-                    <!-- Screenshot 2 -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 2</span>
-                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
-                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                                <span class="text-xs">Loading Rebate Advisor...</span>
-                            </div>
-                            <img src="./image_a5384b.png" 
-                                 alt="Tax Rebate Optimization Advice Screen" 
-                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
-                                 onload="this.classList.remove('opacity-0')">
-                        </div>
-                    </div>
-                </div>
-                
                 <h4 class="font-extrabold text-lg mb-3 text-primary">Project Narrative</h4>
                 <p class="text-slate-600 mb-6 leading-relaxed">
                     Designed to address widespread financial confusion during major NBR tax reforms. I mapped complicated legal changes into structured, visual software logic. It quickly went viral across professional circles on LinkedIn and bKash teams.
                 </p>
                 
-                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-8">
                     <li class="flex items-start gap-3 text-slate-600">
                         <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
@@ -724,7 +778,7 @@
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
                         <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
-                        <span><strong>Intelligent Rebate Advisor:</strong> Automatically evaluates thresholds. If required rebate capital is >120k BDT, it highlights diversified Mutual Funds; for <=120k BDT investments, it targets high-yield bKash Digital DPS (the legal rebate ceiling).</span>
+                        <span><strong>Intelligent Rebate Advisor:</strong> Automatically evaluates thresholds. If required rebate capital is >120k BDT, it highlights diversified Mutual Funds; for &lt;=120k BDT investments, it targets high-yield bKash Digital DPS (the legal rebate ceiling).</span>
                     </li>
                     <li class="flex items-start gap-3 text-slate-600">
                         <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
@@ -755,21 +809,6 @@
                 </button>
             </div>
             <div class="p-8">
-                <!-- Project Visual Assets Block -->
-                <div class="mb-8 space-y-2">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Dashboard Interface Preview</span>
-                    <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-md bg-slate-950 aspect-[16/9] flex items-center justify-center">
-                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
-                            <span class="text-xs">Loading Wealth Dashboard Interface...</span>
-                        </div>
-                        <img src="./image_a53487.png" 
-                             alt="Wealth Dashboard Main Control Board" 
-                             class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
-                             onload="this.classList.remove('opacity-0')">
-                    </div>
-                </div>
-                
                 <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6 rounded-r-xl">
                     <div class="flex gap-3">
                         <i class="fas fa-lock text-amber-600 mt-0.5"></i>
@@ -784,7 +823,7 @@
                     A personalized fintech command center designed to aggregate diverse physical holdings, automated digital deposits, and long-term milestones. It relies on a Google Sheets layout serving as a lightweight database API.
                 </p>
                 
-                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-4">
                     <li class="flex items-start gap-3 text-slate-600">
                         <i class="fas fa-check-circle text-purple-600 mt-1"></i>
@@ -815,58 +854,12 @@
                 </button>
             </div>
             <div class="p-8">
-                <!-- Project Visual Assets Block -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <!-- Screenshot 1 -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Config Form</span>
-                        <div class="relative rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 h-44 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                                <i class="fas fa-spinner animate-spin text-sm text-accent"></i>
-                                <span class="text-[10px]">Loading Parameters Form...</span>
-                            </div>
-                            <img src="./image_a5400d.png" 
-                                 alt="Itinerary configuration setup" 
-                                 class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-300"
-                                 onload="this.classList.remove('opacity-0')">
-                        </div>
-                    </div>
-                    <!-- Screenshot 2 -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">API Configuration</span>
-                        <div class="relative rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 h-44 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                                <i class="fas fa-spinner animate-spin text-sm text-accent"></i>
-                                <span class="text-[10px]">Loading Key Config...</span>
-                            </div>
-                            <img src="./image_a5440c.png" 
-                                 alt="Gemini key setup page" 
-                                 class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-300"
-                                 onload="this.classList.remove('opacity-0')">
-                        </div>
-                    </div>
-                    <!-- Screenshot 3 -->
-                    <div class="space-y-2">
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Output Itinerary</span>
-                        <div class="relative rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 h-44 flex items-center justify-center">
-                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
-                                <i class="fas fa-spinner animate-spin text-sm text-accent"></i>
-                                <span class="text-[10px]">Loading Result View...</span>
-                            </div>
-                            <img src="./image_a59e3e.png" 
-                                 alt="Detailed visual layout results" 
-                                 class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-300"
-                                 onload="this.classList.remove('opacity-0')">
-                        </div>
-                    </div>
-                </div>
-                
                 <h4 class="font-extrabold text-lg mb-3 text-primary">Project Narrative</h4>
                 <p class="text-slate-600 mb-6 leading-relaxed">
                     Escape Diaries is an AI-powered travel planner that generates highly detailed itineraries in seconds. It uses a secure "Bring Your Own Key" (BYOK) architecture to run completely serverless with zero continuous operational LLM costs.
                 </p>
                 
-                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs & Features</h4>
                 <ul class="list-none space-y-3 mb-8">
                     <li class="flex items-start gap-3 text-slate-600">
                         <i class="fas fa-check-circle text-amber-500 mt-1"></i>
@@ -918,7 +911,17 @@
             }
         }
 
-        // Global dismiss binded to physical keyboard Escape key
+        // Restart SVG line growth animation manually upon click or load
+        function restartGrowthAnimation() {
+            const path = document.getElementById('growthCurve');
+            if (path) {
+                path.style.animation = 'none';
+                path.offsetHeight; // Trigger reflow
+                path.style.animation = 'drawLine 2.5s ease-out forwards';
+            }
+        }
+
+        // Global dismiss bounded to physical keyboard Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 const openModals = document.querySelectorAll('.modal.show');
