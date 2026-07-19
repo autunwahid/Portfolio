@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts Inter for a modern, sleek technical aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for sleek modern professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
         tailwind.config = {
@@ -225,48 +227,53 @@
                     <a href="#contact" class="text-secondary hover:text-accent px-3 py-2 rounded-md text-sm font-semibold transition-colors">Contact</a>
                 </div>
                 <div class="md:hidden">
-                    <button onclick="openModal('modal-cv-center')" class="bg-primary text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-slate-800 transition-colors">Let's Talk</button>
+                    <button onclick="openModal('modal-cv-center')" class="bg-primary text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-slate-800 transition-colors">View Resume</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between min-h-[85vh] gap-12 bg-grid-pattern">
-        <div class="lg:w-1/2 space-y-6">
-            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-accent text-sm font-semibold mb-4 border border-blue-100 shadow-sm">
+    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto flex flex-col items-center justify-center text-center min-h-[85vh] gap-8 bg-grid-pattern">
+        <div class="w-full flex flex-col items-center justify-center space-y-6">
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-accent text-sm font-semibold border border-blue-100 shadow-sm">
                 <span class="flex h-2.5 w-2.5 rounded-full bg-accent mr-2.5 animate-ping"></span>
                 Open to Relocation & Global Roles
             </div>
+            
             <h1 class="text-5xl lg:text-6.5xl font-extrabold tracking-tight text-primary leading-tight">
                 Hi, I'm <span class="text-gradient">Wahid</span>.
             </h1>
+            
             <h2 class="text-2xl lg:text-3xl font-bold text-slate-700">
                 Product Manager & Growth Strategist
             </h2>
-            <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
+            
+            <p class="text-lg text-slate-600 max-w-2xl leading-relaxed">
                 Strategic and data-driven CSPO® with 6+ years of experience scaling fintech and consumer products in emerging markets. I specialize in turning complex problems into intuitive solutions.
             </p>
-            <div class="flex flex-wrap gap-4 pt-2">
-                <div class="bg-white px-5 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
+            
+            <div class="flex flex-wrap justify-center gap-6 pt-2 w-full max-w-2xl">
+                <div class="bg-white px-6 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
                     <div class="bg-blue-50 p-3 rounded-xl text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
-                    <div>
+                    <div class="text-left">
                         <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Scaled Product To</p>
                         <p class="font-extrabold text-2xl text-slate-900">7M+ Users</p>
                     </div>
                 </div>
-                <div class="bg-white px-5 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                <div class="bg-white px-6 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
                     <div class="bg-emerald-50 p-3 rounded-xl text-highlight">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     </div>
-                    <div>
+                    <div class="text-left">
                         <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">YoY Expansion</p>
                         <p class="font-extrabold text-2xl text-slate-900">117%+ Growth</p>
                     </div>
                 </div>
             </div>
-            <div class="pt-6 flex flex-wrap gap-4">
+            
+            <div class="pt-6 flex flex-wrap justify-center gap-4 w-full">
                 <a href="#journey" class="bg-primary text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                     <span>View My Journey</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -274,86 +281,11 @@
                 <a href="#contact" class="bg-white text-primary border-2 border-slate-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-50 transition-colors shadow-sm">
                     Get in Touch
                 </a>
-                <!-- Launches Interactive Resume Download Center -->
-                <button onclick="openModal('modal-cv-center')" class="bg-blue-50 text-blue-700 hover:bg-blue-100 px-5 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    <span>Download CV</span>
+                <!-- Launches Interactive Resume Center with customized guidelines -->
+                <button onclick="openModal('modal-cv-center')" class="bg-blue-50 text-blue-700 hover:bg-blue-100 px-7 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2 shadow-sm">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    <span>View Resume</span>
                 </button>
-            </div>
-        </div>
-        
-        <div class="lg:w-1/2 flex justify-center">
-            <div class="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[450px]">
-                <div class="absolute inset-0 bg-gradient-to-tr from-accent to-highlight rounded-[32px] opacity-15 blur-3xl animate-pulse"></div>
-                
-                <div class="relative w-full h-full bg-slate-900 rounded-[28px] shadow-2xl border-4 border-white overflow-hidden group">
-                    
-                    <!-- LAYER 1: Vector SVG Portrait Fallback (Renders instantly and acts as beautiful placeholder if local file is missing) -->
-                    <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-slate-800 via-slate-900 to-indigo-950 flex flex-col items-center justify-center p-6 text-center">
-                        <svg class="w-full h-full max-h-[360px]" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background glow ring -->
-                            <circle cx="100" cy="110" r="75" fill="none" stroke="url(#blueGrad)" stroke-width="3" stroke-dasharray="6 4" class="animate-spin" style="animation-duration: 25s; transform-origin: 100px 110px;"></circle>
-                            <!-- Face/Neck -->
-                            <rect x="91" y="115" width="18" height="25" rx="3" fill="#fbc3a6" />
-                            <path d="M75 100C75 75 125 75 125 100C125 120 75 120 75 100Z" fill="#fdd4be"/>
-                            <!-- Shirt (Soft Pink) -->
-                            <path d="M78 135 L122 135 L128 155 L72 155 Z" fill="#ffe4e6"/>
-                            <path d="M90 135 L100 148 L110 135 Z" fill="#fda4af"/>
-                            <!-- Red Tie with Pattern -->
-                            <path d="M96 138 L104 138 L108 175 L100 183 L92 175 Z" fill="#b91c1c"/>
-                            <path d="M98 145 L102 145 L104 170 L96 170 Z" fill="#991b1b" />
-                            <!-- Glasses Frame & Detail (Signature Glasses) -->
-                            <rect x="79" y="93" width="18" height="12" rx="3" fill="none" stroke="#1e293b" stroke-width="2.5"/>
-                            <rect x="103" y="93" width="18" height="12" rx="3" fill="none" stroke="#1e293b" stroke-width="2.5"/>
-                            <line x1="97" y1="99" x2="103" y2="99" stroke="#1e293b" stroke-width="3"/>
-                            <line x1="74" y1="96" x2="79" y2="96" stroke="#1e293b" stroke-width="1.5"/>
-                            <line x1="121" y1="96" x2="126" y2="96" stroke="#1e293b" stroke-width="1.5"/>
-                            <!-- Hair (Dark Brown/Black Modern Cut) -->
-                            <path d="M72 96C72 70 128 70 128 96C128 90 120 80 100 80C80 80 72 90 72 96Z" fill="#111827"/>
-                            <path d="M72 96L75 105L78 97Z" fill="#111827" />
-                            <path d="M128 96L125 105L122 97Z" fill="#111827" />
-                            <!-- Eyebrows -->
-                            <path d="M78 89C82 87 88 88 91 90" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M122 89C118 87 112 88 109 90" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
-                            <!-- Smiling Lips -->
-                            <path d="M92 113C96 117 104 117 108 113" stroke="#e11d48" stroke-width="1.5" stroke-linecap="round"/>
-                            <!-- Modern Blue Suit Coat with neat lapels -->
-                            <path d="M64 150 C64 140 76 135 84 135 L116 135 C124 135 136 140 136 150 L146 230 L54 230 Z" fill="#1e3a8a"/>
-                            <path d="M82 135 L96 185 L100 185 L84 135 Z" fill="#172554"/>
-                            <path d="M118 135 L104 185 L100 185 L116 135 Z" fill="#172554"/>
-                            <!-- Red pocket square detail -->
-                            <path d="M73 162 L81 157 L85 162 Z" fill="#be123c"/>
-                            <!-- Text Tag overlay -->
-                            <text x="100" y="215" fill="#94a3b8" font-size="9" font-weight="bold" letter-spacing="1" text-anchor="middle">RELOAD OR UPLOAD JPG</text>
-                            
-                            <defs>
-                                <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
-                                    <stop offset="0%" stop-color="#3b82f6" />
-                                    <stop offset="100%" stop-color="#10b981" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-
-                    <!-- LAYER 2: High Resolution Professional portrait from system assets (Fades in over fallback once successfully loaded) -->
-                    <img src="1756924297300~3.jpg" 
-                         alt="Md Wahid Alam Chowdhury Portrait Headshot" 
-                         class="absolute inset-0 w-full h-full object-cover object-[center_15%] transition-opacity duration-700 opacity-0 z-10 group-hover:scale-105"
-                         onload="this.classList.remove('opacity-0')"
-                         onerror="console.log('Using vector avatar fallback...')">
-                </div>
-                
-                <!-- Floating badge: Scrum Alliance Certification -->
-                <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-20">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Scrum_Alliance_logo.svg/1200px-Scrum_Alliance_logo.svg.png" 
-                         alt="CSPO Certification Badge" 
-                         class="h-9 w-auto object-contain"
-                         onerror="this.onerror=null; this.src='https://placehold.co/40x40/ffffff/0f172a?text=CSPO'">
-                    <div>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Certified by Scrum Alliance</p>
-                        <p class="font-extrabold text-sm text-primary">CSPO® Product Owner</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -371,7 +303,6 @@
                 <div class="timeline-item left">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <!-- Vector warning node -->
                             <div class="bg-red-50 p-3 rounded-2xl text-red-500 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                             </div>
@@ -394,7 +325,6 @@
                 <div class="timeline-item right">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <!-- Vector Rocket node -->
                             <div class="bg-blue-50 p-3 rounded-2xl text-accent flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                             </div>
@@ -418,7 +348,6 @@
                 <div class="timeline-item left">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <!-- Vector layout target node -->
                             <div class="bg-violet-50 p-3 rounded-2xl text-violet-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
                             </div>
@@ -437,11 +366,11 @@
                     </div>
                 </div>
 
-                <!-- Milestone 4: Churn & Retention -->
+                <!-- Milestone 4: Churn & Retention (Corrected with exact centering, inline SVGs & light-green highlight elements) -->
                 <div class="timeline-item right">
                     <div class="content">
                         <div class="flex items-center gap-4 mb-4">
-                            <!-- Vector secure shield node (Explicit Inline SVG to guarantee it's 100% visible) -->
+                            <!-- Corrected Amber Node Circle with centermost inline shield SVG -->
                             <div class="bg-amber-50 p-3 rounded-2xl text-amber-600 flex items-center justify-center w-12 h-12 shadow-sm shrink-0">
                                 <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -463,6 +392,7 @@
                 </div>
             </div>
             
+            <!-- Interactive Growth Curve Card (Rephrased meaningful content with zero .docx file mentions) -->
             <div class="mt-20 max-w-4xl mx-auto">
                  <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden border border-slate-800">
                      <div class="absolute top-0 right-0 p-6 opacity-10 pointer-events-none">
@@ -736,6 +666,7 @@
         </div>
     </section>
 
+    <!-- Corrected phone icon background to light green and LinkedIn icon with direct brand reference -->
     <section id="contact" class="py-20 bg-primary text-white relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 class="text-sm font-bold text-accent tracking-widest uppercase mb-2">Connect With Me</h2>
@@ -745,16 +676,23 @@
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Email Card -->
                 <a href="mailto:wahid.brandprofessional@gmail.com" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
                     <span class="text-2xl text-accent group-hover:scale-110 transition-transform">✉️</span>
                     <span class="text-sm font-semibold tracking-wide">wahid.brandprofessional@gmail.com</span>
                 </a>
+                
+                <!-- Corrected Light-Green Phone Card -->
                 <a href="tel:+8801326602477" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
-                    <span class="text-2xl text-accent group-hover:scale-110 transition-transform">📞</span>
+                    <span class="text-2xl text-emerald-400 bg-emerald-500/10 p-2.5 rounded-xl group-hover:scale-110 transition-transform">📞</span>
                     <span class="text-sm font-semibold tracking-wide">+8801326602477</span>
                 </a>
-                <a href="https://www.linkedin.com/in/md-wahid-alam-chowdhury-cspo%C2%AE-24a919141/" target="_blank" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
-                    <span class="text-2xl text-accent group-hover:scale-110 transition-transform">🔗</span>
+                
+                <!-- Corrected Official LinkedIn Card with direct brand routing link -->
+                <a href="https://www.linkedin.com/in/wahid-brandprofessional/" target="_blank" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
+                    <span class="text-2xl text-[#0a66c2] group-hover:scale-110 transition-transform">
+                        <i class="fab fa-linkedin text-3xl"></i>
+                    </span>
                     <span class="text-sm font-semibold tracking-wide">Md Wahid Alam Chowdhury</span>
                 </a>
             </div>
@@ -766,7 +704,6 @@
         </div>
     </section>
 
-    
     <!-- Modal: FIFA Worldcup Predictor -->
     <div id="modal-fifa" class="modal">
         <div class="modal-content">
@@ -944,6 +881,7 @@
         </div>
     </div>
 
+    <!-- Modal: Resume Viewer Centre (Clean, ATS structured layout, strictly View & Print only) -->
     <div id="modal-cv-center" class="modal">
         <div class="modal-content max-w-4xl">
             <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
@@ -951,36 +889,17 @@
                     <span class="text-2xl text-accent">📄</span>
                     <div>
                         <h3 class="text-xl font-extrabold text-primary">Wahid's Resume Center</h3>
-                        <p class="text-xs text-slate-500">Interactive Web-Viewer & PDF Download System</p>
+                        <p class="text-xs text-slate-500">Interactive Web-Viewer & Native Print Layout</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-2">
-                    <button onclick="window.print()" class="bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5">
-                        <span>🖨️</span> Print
-                    </button>
-                    <button onclick="closeModal('modal-cv-center')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
-                        ✕
-                    </button>
-                </div>
+                <!-- Action Controls: Print Only -->
+                <button onclick="window.print()" class="bg-slate-900 text-white hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-semibold transition-colors flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    <span>Print Resume</span>
+                </button>
             </div>
             
             <div class="p-6 md:p-8 space-y-8">
-                <!-- PDF download warning / guidance card -->
-                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-5 flex flex-col md:flex-row gap-4 items-start justify-between">
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-blue-900 text-sm flex items-center gap-1.5">
-                            <span>🚀</span> Looking for the PDF Copy?
-                        </h4>
-                        <p class="text-xs text-blue-700 leading-relaxed max-w-xl">
-                            Click the button on the right to download the direct PDF version. If downloading from GitHub Pages displays an error, please ensure you uploaded <code class="bg-blue-100 px-1 py-0.5 rounded text-[11px] font-mono">Md Wahid Alam Chowdhury_Product Manager_Resume.pdf</code> to your repository's root.
-                        </p>
-                    </div>
-                    <!-- Download Link pointing exact named file verbatim -->
-                    <a href="Md Wahid Alam Chowdhury_Product Manager_Resume.pdf" download="Md Wahid Alam Chowdhury_Product Manager_Resume.pdf" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl font-semibold text-sm transition-all shadow-md whitespace-nowrap shrink-0 flex items-center gap-1.5">
-                        <span>📥</span> Download PDF
-                    </a>
-                </div>
-
                 <!-- Complete structured print-friendly Web-version Resume -->
                 <div class="border border-slate-200 rounded-2xl p-6 md:p-8 bg-white shadow-inner space-y-6 text-slate-800" id="resume-print-area">
                     <div class="text-center space-y-2 border-b border-slate-100 pb-6">
