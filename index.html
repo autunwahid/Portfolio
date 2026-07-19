@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Wahid Alam Chowdhury | Product Manager Portfolio</title>
+    <!-- Tailwind CSS for utility-first responsive layout styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for high-quality professional iconography -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts Inter for a modern, sleek technical aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', // Slate 900
+                        secondary: '#334155', // Slate 700
+                        accent: '#3b82f6', // Blue 500
+                        highlight: '#10b981', // Emerald 500
+                        background: '#f8fafc', // Slate 50
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        
+        /* Custom Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        /* Interactive Journey Timeline Styles */
+        .timeline-container {
+            position: relative;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, #3b82f6, #10b981);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 4px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            right: -11px;
+            background-color: white;
+            border: 4px solid #3b82f6;
+            top: 24px;
+            border-radius: 50%;
+            z-index: 1;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+        }
+        .timeline-item:hover::after {
+            background-color: #10b981;
+            border-color: #ffffff;
+            transform: scale(1.3);
+            box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.25);
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .right::after {
+            left: -11px;
+        }
+        .content {
+            padding: 24px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+            border: 1px solid #f1f5f9;
+        }
+        .content:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.08);
+            border-color: #3b82f6;
+        }
+
+        /* Modern Modal Transitions */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            margin: auto;
+            padding: 0;
+            width: 95%;
+            max-width: 950px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+        
+        /* Mobile compatibility for the timeline layout */
+        @media screen and (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+            .timeline-item::after {
+                left: 20px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .bg-grid-pattern {
+            background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="antialiased bg-slate-50 text-slate-900">
+
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-40 border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-xl text-primary tracking-tight">Wahid<span class="text-accent">.</span>PM</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-secondary hover:text-accent px-3 py-2 rounded-md text-sm font-semibold transition-colors">About</a>
+                    <a href="#journey" class="text-secondary hover:text-accent px-3 py-2 rounded-md text-sm font-semibold transition-colors">bKash Journey</a>
+                    <a href="#projects" class="text-secondary hover:text-accent px-3 py-2 rounded-md text-sm font-semibold transition-colors">Vibe Coding Projects</a>
+                    <a href="#contact" class="text-secondary hover:text-accent px-3 py-2 rounded-md text-sm font-semibold transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <a href="#contact" class="bg-primary text-white text-xs px-4 py-2 rounded-full font-bold hover:bg-slate-800 transition-colors">Let's Talk</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between min-h-[85vh] gap-12 bg-grid-pattern">
+        <div class="lg:w-1/2 space-y-6">
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-accent text-sm font-semibold mb-4 border border-blue-100 shadow-sm">
+                <span class="flex h-2.5 w-2.5 rounded-full bg-accent mr-2.5 animate-ping"></span>
+                Open to Relocation & Global Roles
+            </div>
+            <h1 class="text-5xl lg:text-6.5xl font-extrabold tracking-tight text-primary leading-tight">
+                Hi, I'm <span class="text-gradient">Wahid</span>.
+            </h1>
+            <h2 class="text-2xl lg:text-3xl font-bold text-slate-700">
+                Product Manager & Growth Strategist
+            </h2>
+            <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
+                Strategic and data-driven CSPO® with 6+ years of experience scaling fintech and consumer products in emerging markets. I specialize in turning complex problems into intuitive solutions.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+                <div class="bg-white px-5 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                    <div class="bg-blue-50 p-3 rounded-xl text-accent"><i class="fas fa-users-cog fa-lg"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Scaled Product To</p>
+                        <p class="font-extrabold text-2xl text-slate-900">7M+ Users</p>
+                    </div>
+                </div>
+                <div class="bg-white px-5 py-4 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                    <div class="bg-emerald-50 p-3 rounded-xl text-highlight"><i class="fas fa-chart-line fa-lg"></i></div>
+                    <div>
+                        <p class="text-xs text-slate-400 uppercase font-bold tracking-wider font-semibold">YoY Expansion</p>
+                        <p class="font-extrabold text-2xl text-slate-900">117%+ Growth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-6 flex flex-wrap gap-4">
+                <a href="#journey" class="bg-primary text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-800 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                    <span>View My Journey</span>
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#contact" class="bg-white text-primary border-2 border-slate-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-50 transition-colors shadow-sm">
+                    Get in Touch
+                </a>
+                <a href="Md Wahid Alam Chowdhury_Product Manager_Resume.pdf" target="_blank" class="bg-blue-50 text-blue-700 hover:bg-blue-100 px-5 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Download CV</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="lg:w-1/2 flex justify-center">
+            <div class="relative w-72 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[450px]">
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent to-highlight rounded-[32px] opacity-15 blur-3xl"></div>
+                
+                <!-- Main Headshot Frame with Fade-In Transition -->
+                <div class="relative w-full h-full bg-white rounded-[28px] shadow-2xl border-4 border-white overflow-hidden group">
+                    <div class="absolute inset-0 bg-slate-800 animate-pulse flex items-center justify-center">
+                        <i class="fas fa-user-tie text-slate-600 text-4xl"></i>
+                    </div>
+                    <img src="./1756924297300~3.jpg" 
+                         alt="Md Wahid Alam Chowdhury Portrait Headshot" 
+                         class="relative z-10 w-full h-full object-cover object-[center_15%] opacity-0 transition-all duration-700 group-hover:scale-105"
+                         onload="this.classList.remove('opacity-0')">
+                </div>
+                
+                <!-- Floating badge: Scrum Alliance Certification -->
+                <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Scrum_Alliance_logo.svg/1200px-Scrum_Alliance_logo.svg.png" 
+                         alt="CSPO Certification Badge" 
+                         class="h-9 w-auto object-contain"
+                         onerror="this.onerror=null; this.src='https://placehold.co/40x40/ffffff/0f172a?text=CSPO'">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Certified by Scrum Alliance</p>
+                        <p class="font-extrabold text-sm text-primary">CSPO® Product Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-accent tracking-widest uppercase mb-2">The bKash Case Studies</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-primary">Scaling a Fintech Product to 7 Million Users</h3>
+                <p class="mt-4 text-slate-600 max-w-2xl mx-auto">During my tenure at bKash, I owned the Savings Product, transforming it from a stagnant feature to a massive growth engine.</p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Milestone 1: Baseline -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-red-50 p-3.5 rounded-2xl text-red-500">
+                                <i class="fas fa-exclamation-triangle fa-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-red-500 uppercase tracking-widest">Phase 1: Diagnosis</span>
+                                <h4 class="text-xl font-bold text-primary">The Stagnant Baseline</h4>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            When taking over the savings engine, total active subscriptions were stuck at <span class="font-semibold text-primary">0.7M</span>, with a bare-minimum growth rate of only 20k-30k monthly subscriptions. The product suffered from friction-filled onboarding and complex workflows.
+                        </p>
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-slate-500 font-medium">
+                            <i class="fas fa-briefcase mr-1"></i> Assistant Product Manager, Financial Products
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 2: Acquisition & Subscriptions -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-blue-50 p-3.5 rounded-2xl text-accent">
+                                <i class="fas fa-rocket fa-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-accent uppercase tracking-widest">Phase 2: Distribution Scale</span>
+                                <h4 class="text-xl font-bold text-primary">Scaling User Acquisition</h4>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            Leveraged both digital & physical networks to capture marginalized target markets. 
+                            I initiated a <strong class="text-primary">Weekly DPS (starting at BDT 250/$2)</strong> for daily wage earners, integrated $150 Monthly DPS for professionals, and activated bKash's rural agent network alongside localized success-story campaigns.
+                        </p>
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                            <h5 class="font-bold text-emerald-800 text-xs uppercase tracking-wider mb-1">Key Growth Result</h5>
+                            <p class="text-sm text-emerald-700">Subscriptions soared to <span class="font-extrabold text-emerald-900">7M+</span>. Scaled monthly intake by 10x (200k–250k new users every month).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 3: UX Redesign -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-violet-50 p-3.5 rounded-2xl text-violet-600">
+                                <i class="fas fa-fingerprint fa-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-violet-600 uppercase tracking-widest">Phase 3: Optimization</span>
+                                <h4 class="text-xl font-bold text-primary">Revamping the UX Loop</h4>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            Identified deep friction points in user flows, which had a poor baseline funnel conversion rate of 1.5%. I guided screen-by-screen UX research to compress the convoluted 10-tap registration model into a seamless <strong>3-tap onboarding checkout</strong>.
+                        </p>
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                            <h5 class="font-bold text-emerald-800 text-xs uppercase tracking-wider mb-1">Conversion Metric</h5>
+                            <p class="text-sm text-emerald-700">Funnel activation leaped from 1.5% directly to almost <span class="font-extrabold text-emerald-900">35% conversion</span>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 4: Churn & Retention -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-amber-50 p-3.5 rounded-2xl text-amber-600">
+                                <i class="fas fa-shield-halved fa-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">Phase 4: Operations</span>
+                                <h4 class="text-xl font-bold text-primary">Proactive Churn Mitigation</h4>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            Traditional operations took months to resolve user disputes, resulting in high abandonment rates. I introduced real-time monitoring structures and automated daily SQL sanity routines to spot anomalies. This enabled us to tackle issues within 24-48 hours.
+                        </p>
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                            <h5 class="font-bold text-emerald-800 text-xs uppercase tracking-wider mb-1">Retention Impact</h5>
+                            <p class="text-sm text-emerald-700">Account maturity rates zoomed upwards from a mere 3.7% up to a stellar <span class="font-extrabold text-emerald-900">26% overall retention</span>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Overall Impact highlight -->
+            <div class="mt-16 text-center max-w-2xl mx-auto">
+                 <div class="bg-slate-900 text-white rounded-2xl p-8 shadow-xl relative overflow-hidden">
+                     <div class="absolute right-0 bottom-0 translate-y-6 translate-x-6 text-slate-800 text-9xl font-extrabold select-none pointer-events-none opacity-20">7M</div>
+                     <h4 class="text-xl font-bold text-slate-200 mb-2">Total Combined Portfolio Impact</h4>
+                     <p class="text-slate-300 text-base leading-relaxed mb-4">
+                         Referencing our documentation in <span class="text-highlight font-semibold">"case studies at bKash.docx"</span>, these optimizations collectively brought bKash Savings to more than 7 Million total subscriptions within a 3.5-year horizon.
+                     </p>
+                     <div class="inline-flex gap-2 items-center bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold">
+                         <i class="fas fa-check-circle text-highlight"></i>
+                         <span>Verified Fintech Case Studies</span>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-slate-50 border-t border-slate-150">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-accent tracking-widest uppercase mb-2">Technical Explorations</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-primary mb-4">My Vibe Coding Projects</h3>
+                <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
+                    Beyond PM, I build rich, fully functional web tools by prototyping ideas directly with AI, Firebase APIs, and interactive layouts.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1: FIFA -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
+                    <!-- Image Card with Skeleton Loader -->
+                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-fifa')">
+                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                            <span class="text-xs">Loading Cover...</span>
+                        </div>
+                        <img src="./image_a4c843.png" 
+                             alt="FIFA Predictor Cover Image" 
+                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"
+                             onload="this.classList.remove('opacity-0')">
+                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Project Specs
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-primary">FIFA Worldcup Predictor</h4>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-semibold">Web App</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            A highly engaging live match predictor built for workplace colleagues during the FIFA 2026 tourney. Includes scores, dynamic prediction models, booster quizzes, and live scoreboards.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Gemini AI</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Firebase Realtime DB</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">GitHub Pages</span>
+                        </div>
+                        <button onclick="openModal('modal-fifa')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
+                            Explore Technical Specs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Tax Calculator -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
+                    <!-- Image Card with Skeleton Loader -->
+                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-tax')">
+                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                            <span class="text-xs">Loading Cover...</span>
+                        </div>
+                        <img src="./image_a53544.png" 
+                             alt="Tax Calculator Cover Image" 
+                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105" 
+                             style="object-position: top;"
+                             onload="this.classList.remove('opacity-0')">
+                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Project Specs
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-primary">Intuitive Tax Calculator (BD)</h4>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold">Finance Tool</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            Built directly in response to complex structural changes in Bangladesh's tax policies. Guides taxpayers through dynamic rebate simulation matrices, advising optimum mutual funds or DPS plans.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Rules Engine</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">UI/UX Design</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Fintech Advisory</span>
+                        </div>
+                        <button onclick="openModal('modal-tax')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
+                            Explore Technical Specs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Wealth Management -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
+                    <!-- Image Card with Skeleton Loader -->
+                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-wealth')">
+                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                            <span class="text-xs">Loading Cover...</span>
+                        </div>
+                        <img src="./image_a53487.png" 
+                             alt="Wealth Management Cover Image" 
+                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"
+                             onload="this.classList.remove('opacity-0')">
+                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Project Specs
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-primary">Realtime Personal Wealth Manager</h4>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full font-semibold">Dashboard</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            A security-first personal ledger utilizing structured Google Sheets web integration as a low-cost, real-time relational database. Includes asset allocation metrics and dynamic status trackers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Google Sheets API</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Data Visualization</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">Relational Models</span>
+                        </div>
+                        <button onclick="openModal('modal-wealth')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
+                            Explore Technical Specs
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Escape Diaries -->
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-lg transition-all flex flex-col h-full group">
+                    <!-- Image Card with Skeleton Loader -->
+                    <div class="h-56 bg-slate-950 relative overflow-hidden cursor-pointer" onclick="openModal('modal-escape')">
+                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                            <span class="text-xs">Loading Cover...</span>
+                        </div>
+                        <img src="./image_a5400d.png" 
+                             alt="Escape Diaries Cover Image" 
+                             class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:scale-105"
+                             onload="this.classList.remove('opacity-0')">
+                        <div class="absolute inset-0 bg-primary/45 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                            <span class="bg-white text-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Project Specs
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <h4 class="text-xl font-bold text-primary">Escape Diaries (AI Itinerary)</h4>
+                            <span class="bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full font-semibold">AI App</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            An intelligent itinerary creator that formats comprehensive travel maps, budget structures, custom localized phrases, and video guides on top of Google's Gemini LLM.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">LLM Orchestration</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">API Integration</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-semibold">BYOK Model</span>
+                        </div>
+                        <button onclick="openModal('modal-escape')" class="w-full text-center border-2 border-slate-200 text-slate-700 hover:border-accent hover:text-accent font-semibold py-3 rounded-xl transition-all">
+                            Explore Technical Specs
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-primary text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-sm font-bold text-accent tracking-widest uppercase mb-2">Connect With Me</h2>
+            <h3 class="text-3xl md:text-4xl font-extrabold mb-6">Let's Build Something Big</h3>
+            <p class="text-slate-300 mb-10 text-base max-w-xl mx-auto leading-relaxed">
+                Currently open to new professional opportunities, leadership mandates, and global product assignments. Let's arrange a direct strategy call.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <a href="mailto:wahid.brandprofessional@gmail.com" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
+                    <i class="fas fa-envelope text-2xl text-accent group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold tracking-wide">wahid.brandprofessional@gmail.com</span>
+                </a>
+                <a href="tel:+8801326602477" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
+                    <i class="fas fa-phone-alt text-2xl text-accent group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold tracking-wide">+8801326602477</span>
+                </a>
+                <a href="https://www.linkedin.com/in/md-wahid-alam-chowdhury-cspo%C2%AE-24a919141/" target="_blank" class="bg-slate-800/60 p-6 rounded-2xl hover:bg-slate-800 transition-all border border-slate-700/60 flex flex-col items-center gap-3 shadow-md group">
+                    <i class="fab fa-linkedin-in text-2xl text-accent group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-semibold tracking-wide">Md Wahid Alam Chowdhury</span>
+                </a>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center text-slate-400 text-sm">
+                <p>&copy; 2026 Md Wahid Alam Chowdhury. Proud CSPO® Portfolio.</p>
+                <p class="mt-2 md:mt-0">Crafted professionally with <i class="fas fa-heart text-red-500 mx-1"></i> & AI</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal: FIFA Worldcup Predictor -->
+    <div id="modal-fifa" class="modal">
+        <div class="modal-content">
+            <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
+                <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
+                    <i class="fas fa-trophy text-amber-500"></i> FIFA 2026 Worldcup Predictor
+                </h3>
+                <button onclick="closeModal('modal-fifa')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <!-- Project Visual Assets Block -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Screenshot 1 -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 1</span>
+                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                                <span class="text-xs">Loading Match Predictor Panel...</span>
+                            </div>
+                            <img src="./image_a4c843.png" 
+                                 alt="FIFA Match-wise Prediction Panel" 
+                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
+                                 onload="this.classList.remove('opacity-0')">
+                        </div>
+                    </div>
+                    <!-- Screenshot 2 -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 2</span>
+                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                                <span class="text-xs">Loading Leaderboard Panel...</span>
+                            </div>
+                            <img src="./image_a4c883.png" 
+                                 alt="FIFA Live Leaderboard and Scoring Standings" 
+                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
+                                 onload="this.classList.remove('opacity-0')">
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Project Narrative</h4>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Designed as a fun, active social application for corporate engagement during the FIFA 2026 tournament. It managed rapid data updates via Firebase and served up instant prediction metrics, fostering intense interaction within our company.
+                </p>
+                
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <ul class="list-none space-y-3 mb-8">
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-accent mt-1"></i>
+                        <span><strong>Match Predictions:</strong> Real-time calculations with automatic point rewards aligned with Group, Knockout, or final scorelines.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-accent mt-1"></i>
+                        <span><strong>Booster Quizzes:</strong> Dynamically injected daily quizzes built based on the statistical matches ahead to multiply scoring stakes.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-accent mt-1"></i>
+                        <span><strong>Unified Database Integration:</strong> Direct connection to live cloud databases securely managing point matrices.</span>
+                    </li>
+                </ul>
+                
+                <div class="mt-8 flex justify-between items-center border-t border-slate-100 pt-6">
+                    <span class="text-xs text-slate-400 font-medium">Built completely free using Gemini, Firebase & GitHub Pages.</span>
+                    <a href="https://autunwahid.github.io/FIFA26PredictorbyFP/" target="_blank" class="bg-accent text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-600 transition-all inline-flex items-center gap-2 shadow-md">
+                        <span>Launch App Live</span>
+                        <i class="fas fa-external-link-alt text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Intuitive Tax Calculator BD -->
+    <div id="modal-tax" class="modal">
+        <div class="modal-content">
+            <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
+                <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
+                    <i class="fas fa-calculator text-emerald-500"></i> Bangladesh Tax Calculator
+                </h3>
+                <button onclick="closeModal('modal-tax')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <!-- Project Visual Assets Block -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Screenshot 1 -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 1</span>
+                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                                <span class="text-xs">Loading Configuration Interface...</span>
+                            </div>
+                            <img src="./image_a53544.png" 
+                                 alt="Tax Setup and Configuration Interface" 
+                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
+                                 onload="this.classList.remove('opacity-0')">
+                        </div>
+                    </div>
+                    <!-- Screenshot 2 -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Interface Screenshot 2</span>
+                        <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 aspect-[5/3] flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                                <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                                <span class="text-xs">Loading Rebate Advisor...</span>
+                            </div>
+                            <img src="./image_a5384b.png" 
+                                 alt="Tax Rebate Optimization Advice Screen" 
+                                 class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
+                                 onload="this.classList.remove('opacity-0')">
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Project Narrative</h4>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Designed to address widespread financial confusion during major NBR tax reforms. I mapped complicated legal changes into structured, visual software logic. It quickly went viral across professional circles on LinkedIn and bKash teams.
+                </p>
+                
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <ul class="list-none space-y-3 mb-8">
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                        <span><strong>Dynamic Slabs Calculation:</strong> Seamless processing of progressive income matrices for rapid calculation.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                        <span><strong>Intelligent Rebate Advisor:</strong> Automatically evaluates thresholds. If required rebate capital is >120k BDT, it highlights diversified Mutual Funds; for <=120k BDT investments, it targets high-yield bKash Digital DPS (the legal rebate ceiling).</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                        <span><strong>Interactive Slider Advisor:</strong> Users can preview exact marginal tax savings in real-time as they toggle potential investment values.</span>
+                    </li>
+                </ul>
+                
+                <div class="mt-8 flex justify-between items-center border-t border-slate-100 pt-6">
+                    <span class="text-xs text-slate-400 font-medium">Built as an organic social-good tool using lightweight JS.</span>
+                    <a href="https://autunwahid.github.io/TaxCalcBD2026-27/" target="_blank" class="bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-all inline-flex items-center gap-2 shadow-md">
+                        <span>Launch App Live</span>
+                        <i class="fas fa-external-link-alt text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Realtime Personal Wealth Management -->
+    <div id="modal-wealth" class="modal">
+        <div class="modal-content">
+            <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
+                <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
+                    <i class="fas fa-wallet text-purple-500"></i> Realtime Personal Wealth Dashboard
+                </h3>
+                <button onclick="closeModal('modal-wealth')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <!-- Project Visual Assets Block -->
+                <div class="mb-8 space-y-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Dashboard Interface Preview</span>
+                    <div class="relative rounded-2xl overflow-hidden border border-slate-100 shadow-md bg-slate-950 aspect-[16/9] flex items-center justify-center">
+                        <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                            <i class="fas fa-spinner animate-spin text-xl text-accent"></i>
+                            <span class="text-xs">Loading Wealth Dashboard Interface...</span>
+                        </div>
+                        <img src="./image_a53487.png" 
+                             alt="Wealth Dashboard Main Control Board" 
+                             class="absolute z-10 w-full h-full object-contain opacity-0 transition-opacity duration-300"
+                             onload="this.classList.remove('opacity-0')">
+                    </div>
+                </div>
+                
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6 rounded-r-xl">
+                    <div class="flex gap-3">
+                        <i class="fas fa-lock text-amber-600 mt-0.5"></i>
+                        <p class="text-sm text-amber-800">
+                            <strong>Note on Project Privacy:</strong> Because this details sensitive financial asset allocations, the live deployment remains private/secured. It represents structural proof-of-concept modeling for spreadsheet database synchronization.
+                        </p>
+                    </div>
+                </div>
+
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Project Narrative</h4>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    A personalized fintech command center designed to aggregate diverse physical holdings, automated digital deposits, and long-term milestones. It relies on a Google Sheets layout serving as a lightweight database API.
+                </p>
+                
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <ul class="list-none space-y-3 mb-4">
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span><strong>Spreadsheet Synced Engine:</strong> Updates typed in Google Sheets are rendered on the frontend in real-time.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span><strong>Progress Ring Visuals:</strong> Live calculations indicating portfolio growth and milestone completions.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-purple-600 mt-1"></i>
+                        <span><strong>Segmented Analytics:</strong> Dynamically visualizes diverse assets, separating immediate operational accounts from locked investments.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Escape Diaries AI Itinerary -->
+    <div id="modal-escape" class="modal">
+        <div class="modal-content">
+            <div class="sticky top-0 bg-white px-6 py-4 border-b border-slate-100 flex justify-between items-center z-30">
+                <h3 class="text-2xl font-extrabold text-primary flex items-center gap-2">
+                    <i class="fas fa-compass text-amber-500"></i> Escape Diaries Travel Planner
+                </h3>
+                <button onclick="closeModal('modal-escape')" class="text-slate-400 hover:text-slate-700 focus:outline-none bg-slate-50 hover:bg-slate-100 p-2 rounded-full transition-colors">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <!-- Project Visual Assets Block -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <!-- Screenshot 1 -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Config Form</span>
+                        <div class="relative rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 h-44 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                                <i class="fas fa-spinner animate-spin text-sm text-accent"></i>
+                                <span class="text-[10px]">Loading Parameters Form...</span>
+                            </div>
+                            <img src="./image_a5400d.png" 
+                                 alt="Itinerary configuration setup" 
+                                 class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-300"
+                                 onload="this.classList.remove('opacity-0')">
+                        </div>
+                    </div>
+                    <!-- Screenshot 2 -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">API Configuration</span>
+                        <div class="relative rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 h-44 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                                <i class="fas fa-spinner animate-spin text-sm text-accent"></i>
+                                <span class="text-[10px]">Loading Key Config...</span>
+                            </div>
+                            <img src="./image_a5440c.png" 
+                                 alt="Gemini key setup page" 
+                                 class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-300"
+                                 onload="this.classList.remove('opacity-0')">
+                        </div>
+                    </div>
+                    <!-- Screenshot 3 -->
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Output Itinerary</span>
+                        <div class="relative rounded-xl overflow-hidden border border-slate-100 shadow-sm bg-slate-950 h-44 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-900 animate-pulse flex flex-col items-center justify-center text-slate-500 gap-2">
+                                <i class="fas fa-spinner animate-spin text-sm text-accent"></i>
+                                <span class="text-[10px]">Loading Result View...</span>
+                            </div>
+                            <img src="./image_a59e3e.png" 
+                                 alt="Detailed visual layout results" 
+                                 class="absolute z-10 w-full h-full object-cover opacity-0 transition-opacity duration-300"
+                                 onload="this.classList.remove('opacity-0')">
+                        </div>
+                    </div>
+                </div>
+                
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Project Narrative</h4>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Escape Diaries is an AI-powered travel planner that generates highly detailed itineraries in seconds. It uses a secure "Bring Your Own Key" (BYOK) architecture to run completely serverless with zero continuous operational LLM costs.
+                </p>
+                
+                <h4 class="font-extrabold text-lg mb-3 text-primary">Core Technical Specs</h4>
+                <ul class="list-none space-y-3 mb-8">
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span><strong>Structured Gemini Integration:</strong> Orchestrates optimized prompts to Google's LLM, producing beautiful HTML-styled day-by-day itineraries.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span><strong>Comprehensive Utility Suite:</strong> Provides automated flight providers lookup, localized communication dictionaries, map markers, and travel safety advice.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-600">
+                        <i class="fas fa-check-circle text-amber-500 mt-1"></i>
+                        <span><strong>Rich Media Recommendations:</strong> Fetches matching visual travel guides and local cuisine recommendations dynamically.</span>
+                    </li>
+                </ul>
+                
+                <div class="mt-8 flex justify-between items-center border-t border-slate-100 pt-6">
+                    <span class="text-xs text-slate-400 font-medium">Harnesses Google's latest Gemini models on client side.</span>
+                    <a href="https://autunwahid.github.io/EscapeDiaries/" target="_blank" class="bg-amber-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-amber-700 transition-all inline-flex items-center gap-2 shadow-md">
+                        <span>Launch App Live</span>
+                        <i class="fas fa-external-link-alt text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interactive Modal control functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Lock scrolling on primary body
+                
+                // Track outside-click to automatically dismiss modal frame
+                modal.onclick = function(event) {
+                    if (event.target === modal) {
+                        closeModal(modalId);
+                    }
+                };
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto'; // Re-enable body scroll
+            }
+        }
+
+        // Global dismiss binded to physical keyboard Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const openModals = document.querySelectorAll('.modal.show');
+                openModals.forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
